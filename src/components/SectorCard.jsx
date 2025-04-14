@@ -10,7 +10,7 @@ function SectorCard({ sector }) {
         } bg-white rounded shadow-md p-6 pb-4 text-gray-700 border border-gray-300`}
       >
         <div className="flex justify-between items-center relative">
-          <p className="text-lg font-bold">{sector.name}</p>
+          <p className=" font-bold">{sector.name}</p>
           {sector.completed ? (
             <span className="bg-green-50 text-green-800 text-xs py-1 px-2  rounded-full border border-green-200 absolute top-0 right-0">
               Completado
@@ -28,7 +28,7 @@ function SectorCard({ sector }) {
 
           <div className="flex items-center gap-2 text-sm justify-between">
             <div className=" flex items-center gap-1">
-              <span className="text-2xl font-bold text-gray-600">
+              <span className="text-xl font-bold text-gray-600">
                 {sector.attendees || 0}
               </span>
               <span className="material-symbols-outlined ">group</span>
