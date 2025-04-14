@@ -37,7 +37,7 @@ export function formatDateTime(date) {
 }
 
 export function formatWhatsAppMessage(sectors, startDateTime) {
-  let message = "📊 *REPORTE DE ASISTENTES* 📊\n\n"
+  let message = "*REPORTE DE ASISTENTES*\n\n"
 
   // Agregar fecha y hora si están configuradas
   if (startDateTime) {
@@ -52,16 +52,16 @@ export function formatWhatsAppMessage(sectors, startDateTime) {
       minute: "2-digit",
     }).format(startDateTime)
 
-    message += `📅 *Fecha:* ${dateStr}\n`
-    message += `⏰ *Hora:* ${timeStr}\n\n`
+    message += `*Fecha:* ${dateStr}\n`
+    message += `*Hora:* ${timeStr}\n\n`
   }
 
   let totalAttendees = 0
   sectors.forEach((sector) => {
     totalAttendees += sector.attendees || 0
     message += `*${sector.name}*\n`
-    message += `👤 Encargado: ${sector.manager}\n`
-    message += `🧑‍🤝‍🧑 Asistentes: ${sector.attendees || 0}\n\n`
+    message += `Encargado: ${sector.manager}\n`
+    message += `Asistentes: ${sector.attendees || 0}\n\n`
   })
 
   message += `*TOTAL DE ASISTENTES: ${totalAttendees}*`
