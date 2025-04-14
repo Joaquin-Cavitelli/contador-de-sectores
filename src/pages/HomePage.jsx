@@ -125,7 +125,7 @@ function HomePage() {
           <span>No hay sectores configurados. Acceda a Admin para agregar sectores.</span>
         </div>
       ) : (
-        <div className="space-y-3 px-4">
+        <div className="space-y-3 p-6">
           {sectors.map((sector) => (
             <SectorCard key={sector.id} sector={sector} />
           ))}
