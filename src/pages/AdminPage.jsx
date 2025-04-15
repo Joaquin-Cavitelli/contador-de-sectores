@@ -161,22 +161,11 @@ function AdminPage({ isAuthenticated, setIsAuthenticated }) {
     const whatsappUrl = `https://wa.me/?text=${message}`
     window.open(whatsappUrl, "_blank")
   }
-
-  useEffect(() => {
-    const setVh = () => {
-      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-    }
-  
-    setVh();
-    window.addEventListener('resize', setVh);
-  
-    return () => window.removeEventListener('resize', setVh);
-  }, []);
   
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-[calc(var(--vh)_*_100)] bg-white flex p-4">
+      <div className="min-h-[100dvh] bg-white flex p-4">
         <div className="bg-white max-w-lg w-full text-gray-600">
         <Link to="/">
           <button className="flex items-center gap-1 h-8 p-4 mb-10 text-gray-700 font-semibold hover:text-gray-900">
